@@ -7,6 +7,7 @@ A CLI-based Todo application built with Python 3.13.
 - Add new todo tasks
 - View all todo tasks
 - Mark tasks as completed
+- Update tasks
 - Delete tasks
 - Data persists between sessions (stored in todo_data.json)
 
@@ -28,6 +29,9 @@ python -m src.cli.main view
 
 # Complete a task (with ID 1)
 python -m src.cli.main complete 1
+
+# Update a task (with ID 1)
+python -m src.cli.main update 1 "update task"
 
 # Delete a task (with ID 1)
 python -m src.cli.main delete 1
