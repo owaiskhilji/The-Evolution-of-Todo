@@ -1,55 +1,53 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!-- SYNC IMPACT REPORT
+Version change: N/A → 1.0.0
+Added sections: Core Principles (6 principles), Development Standards, Sub-Agent Delegation, Governance
+Removed sections: None
+Modified principles: N/A (new constitution)
+Templates requiring updates:
+  - .specify/templates/plan-template.md ⚠ pending
+  - .specify/templates/spec-template.md ⚠ pending
+  - .specify/templates/tasks-template.md ⚠ pending
+  - .specify/templates/commands/*.md ⚠ pending
+Follow-up TODOs: None
+-->
+# Todo App Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Python 3.13 Standard
+All code must be written in Python 3.13 with strict adherence to modern Python standards and best practices. Dependencies must be managed using `uv` package manager for consistency and performance.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Modular Architecture
+Code must be modular and stored in the `src/` directory. Each component should have a single responsibility and be independently testable and maintainable.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Business Logic Compliance (NON-NEGOTIABLE)
+All business logic must be derived from @.claude/skills/todo-logic.md. Any deviation from the defined logic requires explicit approval and documentation of the change rationale.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. In-Memory Storage Phase 1
+Phase 1 implementation must use in-memory storage only. No persistent database solutions should be implemented during this phase. This ensures rapid development and testing capabilities.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Type Safety and Documentation
+All code must include type hints and clear documentation. Clean, well-documented code is required for maintainability and team collaboration.
 
-### [PRINCIPLE_6_NAME]
+### VI. Sub-Agent Delegation
+For coding tasks, delegate to the 'Developer-Agent'. For testing, ensure the code follows the specifications in the `specs/` folder. This ensures proper workload distribution and specialized handling.
 
+## Development Standards
 
-[PRINCIPLE__DESCRIPTION]
+- Always use Python 3.13 and `uv` for dependency management
+- Code must be modular and stored in the `src/` directory
+- Phase 1: In-memory storage only
+- Use clean, documented Python code with type hints
+- All business logic must be derived from @.claude/skills/todo-logic.md
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Sub-Agent Delegation
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+- For coding tasks, delegate to the 'Developer-Agent'
+- For testing, ensure the code follows the specifications in the `specs/` folder
+- Agent responsibilities must be clearly defined and followed
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+The Lead Architect is responsible for ensuring all development aligns with this constitution. All code reviews must verify compliance with these principles. Any architectural decisions that conflict with these principles require explicit approval from the Lead Architect.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2025-12-31 | **Last Amended**: 2025-12-31
